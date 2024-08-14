@@ -1,0 +1,180 @@
+<!doctype html>
+<html class=no-js lang="">
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<head>
+    <meta charset=utf-8>
+    <meta name=description content="">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <title>soccer club</title>
+    <link rel="shortcut icon" href=favicon.ico>
+    <link rel=stylesheet href="{{ url_for('static', filename='css/vendor.css') }}">
+    <link rel=stylesheet href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/layerslider.css') }}">
+    <link rel="stylesheet" type="text/css" href="/static/css/detallesjugadores.css" />
+    <script src="{{ url_for('static', filename='js/vendor/modernizr.js') }}"></script>
+
+    <style>
+        .heroesBg {
+            background-image: url("{{ url_for('static', filename='images/background/heroesBg.jpg') }}");
+        }
+
+        .player01 {
+            background-image: url("{{ url_for('static', filename='images/player/player01.jpg') }}");
+        }
+        /* CSS para hacer que el footer se quede al fondo */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .content {
+            flex: 1;
+        }
+        .footer-type01 {
+            background: #333; /* Ajusta el color de fondo según tu diseño */
+            color: #fff;
+            padding: 20px 0; /* Ajusta el padding según tu diseño */
+            text-align: center;
+        }
+    </style>
+</head>
+<body><!--[if lt IE 10]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+<div class=wrapper>
+    <header class=header-main>
+        <div class=header-upper>
+            <div class=container>
+                <div class=row>
+                    <ul>
+                        <li><a href="#">DETALLE JUGADOR</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="header-lower clearfix">
+            <div class=container>
+                <div class=row><h1 class=logo><a href=index-2.html><img src="{{ url_for('static', filename='images/logo.png') }}" alt=image></a></h1>
+
+                    <div class=menubar>
+                        <nav class=navbar>
+                            <div class=nav-wrapper>
+                                <div class=navbar-header>
+                                    <button type=button class=navbar-toggle><span class=sr-only>Toggle navigation</span>
+                                        <span class=icon-bar></span></button>
+                                </div>
+                                <div class=nav-menu>
+                                    <ul class="nav navbar-nav menu-bar">
+                                        <li><a href=index-2.html class=active>Inicio <span></span> <span></span>
+                                            <span></span> <span></span></a></li>
+                                        <li><a href=noticias.html>Noticias<span></span> <span></span> <span></span>
+                                            <span></span></a></li>
+                                        <li><a href=about.html>about<span></span> <span></span> <span></span>
+                                                <span></span></a></li>
+                                        <li><a>Galeria<span></span> <span></span> <span></span> <span></span></a>
+                                            <ul class=sub-menu>
+                                                <li><a href=gallerypage01.html>masonry</a></li>
+                                                <li><a href=gallery02.html>gallery column two</a></li>
+                                                <li><a href=gallery03.html>gallery column 03</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href=equipos.html>Equipos<span></span> <span></span> <span></span>
+                                            <span></span></a></li>
+                                        <li><a href=contact.html>contacto <span></span> <span></span> <span></span>
+                                            <span></span></a></li>
+                                        <li><a>error <span></span> <span></span> <span></span> <span></span></a>
+                                            <ul class=sub-menu>
+                                                <li><a href=400.html>400 page</a></li>
+                                                <li><a href=401.html>401 page</a></li>
+                                                <li><a href=403.html>403 page</a></li>
+                                                <li><a href=404.html>404 page</a></li>
+                                                <li><a href=500.html>500 page</a></li>
+                                                <li><a href=503.html>503 page</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class=social><a href=https://www.facebook.com/templatespoint.net class=facebook><i
+                            class="fa fa-facebook"></i></a> <a href=https://twitter.com/ class=twitter><i
+                            class="fa fa-twitter"></i></a> <a href=https://www.behance.net/ class=behance><i
+                            class="fa fa-behance"></i></a></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class=innerbannerwrap>
+        <div class=content></div>
+        <div class=innerbanner><h2 class=bannerHeadline><span>                </span></h2></div>
+    </div>
+    <section class=playerDpage>
+        <div class=container>
+            <div class="row">
+                <div class="player-details-section">
+                    <h2 class="heading">Detalles <span>del jugador</span></h2>
+                    <section class="player-details">
+                        <h2>{{ jugador['Nombre'] }} {{ jugador['Apellido_Paterno'] }} {{ jugador['Apellido_Materno'] }}</h2>
+                        <p><strong>Fecha de Nacimiento:</strong> {{ jugador['Fecha_Nacimiento'] }}</p>
+                        <p><strong>Equipo Actual:</strong> {{ equipo['Nombre'] }}</p>
+                        <p><strong>Categoría:</strong> {{ categoria['Nombre'] }}</p>
+                    </section>
+                </div>
+            </div>
+            <div class="row">
+                <div class="player-stats-section">
+                    <div class="player-stats">
+                        <p class="stats-header">Estadísticas</p>
+                        <ul class="stats-list">
+                            <li>
+                                <span class="stat-icon"><img src="/static/images/equipos/balon.png" alt="Balón" class="icon"></span>
+                                {% if estadisticas %}
+                                <span class="stat-label">Goles Anotados: {{ estadisticas['Goles_Anotados'] }}</span>
+                                {% endif %}
+                            </li>
+                            <li>
+                                <span class="stat-icon"><img src="/static/images/equipos/tarjeta-amarilla.png" alt="Tarjeta Amarilla" class="icon"></span>
+                                {% if estadisticas %}
+                                <span class="stat-label">Tarjetas Amarillas: {{ estadisticas['Tarjetas_Amarillas'] }}</span>
+                                {% endif %}
+                            </li>
+                            <li>
+                                <span class="stat-icon"><img src="/static/images/equipos/tarjeta-roja.png" alt="Tarjeta Roja" class="icon"></span>
+                                {% if estadisticas %}
+                                <span class="stat-label">Tarjetas Rojas: {{ estadisticas['Tarjetas_Rojas'] }}</span>
+                                {% endif %}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class=footer-type01>
+        <div class=footer-type02>
+            <div class=container>
+                <div class=row>
+                    <a href=index-2.html class=footer-logo><img src="{{ url_for('static', filename='images/logo.png') }}" alt=image></a>
+                    <div class=footer-container>
+                        <ul class=clearfix>
+                            <li><a href=https://www.facebook.com/ class=bigsocial-link><i class="fa fa-facebook"></i></a></li>
+                            <li><a href=https://twitter.com/ class=bigsocial-link target=_blank><i class="fa fa-twitter"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class=copyRight>Copyright © 2017. All rights reserved. Designed by <a
+                            href=http://templatespoint.net>Templates Point</a></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<script src="{{ url_for('static', filename='js/vendor/vendor.js') }}"></script>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

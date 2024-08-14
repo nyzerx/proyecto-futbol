@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calendario Partidos</title>
+    <link rel="stylesheet" href="static/css/calendario.css" />
+  </head>
+  <body>
+    <style>
+      /* Aquí va el CSS para ajustar las imágenes */
+      /* CSS para ajustar las imágenes */
+      img {
+        max-width: 16%;
+        height: auto;
+        display: block;
+        margin-inline: auto;
+      }
+
+      /* Ocultar imágenes en filas de datos */
+      tbody tr img {
+        display: none;
+      }
+
+      .header img {
+        max-width: 40px; /* Ajusta este valor según necesites */
+        height: auto;
+      }
+    </style>
+
+    <!--=============== HEADER ===============-->
+    <header class="header">
+      <nav class="nav container">
+        <div class="nav__data">
+          <a href="#" class="nav__logo">
+            <i class="ri-code-s-slash-line"></i> Asociacion Deportiva
+          </a>
+
+          <div class="nav__toggle" id="nav-toggle">
+            <i class="ri-menu-line nav__toggle-menu"></i>
+            <i class="ri-close-line nav__toggle-close"></i>
+          </div>
+        </div>
+
+        <!--=============== NAV MENU ===============-->
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li>
+              <a href="#" class="nav__link">Inicio</a>
+            </li>
+            <li>
+              <a href="{{ url_for('noticias') }}" class="nav__link">
+                Noticias <i class="ri-newspaper-line"></i>
+              </a>
+            </li>
+            <li>
+              <a href="{{ url_for('galeria') }}" class="nav__link">
+                Galeria <i class="ri-gallery-line"></i>
+              </a>
+            </li>
+            <li>
+              <a href="{{ url_for('calendario') }}" class="nav__link">
+                Calendario <i class="ri-gallery-line"></i>
+              </a>
+            </li>
+
+            <!--=============== DROPDOWN 1 ===============-->
+            <li class="dropdown__item">
+              <div class="nav__link dropdown__button">
+                Equipos <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+              </div>
+
+              <div class="dropdown__container">
+                <div class="dropdown__content">
+                  <div class="dropdown__group">
+                    <div class="dropdown__icon">
+                      <i class="ri-flashlight-line"></i>
+                    </div>
+
+                    <span class="dropdown__title">Datos De Competencia</span>
+
+                    <ul class="dropdown__list">
+                      <li>
+                        <a
+                          href="{{ url_for('resultados_partidos')}}"
+                          class="dropdown__link"
+                          >Resultados Partidos</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="{{ url_for('estadisticas_jugadores') }}"
+                          class="dropdown__link"
+                          >Estadisticas Jugadores</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="{{ url_for('mostrar_jugadores')}}"
+                          class="dropdown__link"
+                          >Asistencias Jugadores</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="dropdown__group">
+                    <div class="dropdown__icon">
+                      <i class="ri-file-paper-2-line"></i>
+                    </div>
+
+                    <span class="dropdown__title">Posiciones</span>
+
+                    <ul class="dropdown__list">
+                      <li>
+                        <a
+                          href="{{ url_for('tabla_posiciones')}}"
+                          class="dropdown__link"
+                          >Primera Division</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="{{ url_for('tabla_posiciones_segunda') }}"
+                          class="dropdown__link"
+                          >Segunda Division</a
+                        >
+                      </li>
+                    </ul>
+                    <li>
+                      <a href="{{ url_for('login') }}" class="nav__link">
+                        Acceso <i class="ri-login-box-line"></i>
+                      </a>
+                    </li>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+  </body>
+</html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/static/css/noticias.css" />
+
+    <!----- FONT AWESOME CSS FOR ICONS FONTS ------>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+
+    <!--=============== REMIXICONS ===============-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!-- google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Raleway:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/dbed6b6114.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!--=============== HEADER ===============-->
+    <header>
+      <div class="announcement-bar">
+        <div id="next-matches">
+          <!-- Los partidos se cargarán aquí mediante JavaScript -->
+        </div>
+      </div>
+      <nav class="navbar">
+        <div class="navbar-container">
+          <div class="navbar-toggle" id="mobile-menu">
+            <i class="ri-menu-line"></i>
+          </div>
+          <div class="navbar-logo">
+            <img src="/static/images/logo.png" alt="Logo" />
+          </div>
+        </div>
+        <div class="navbar-links" id="navbar-links">
+          <a href="{{ url_for('home') }}"> INICIO</a>
+          <a href="{{ url_for('noticias') }}"> NOTICIAS</a>
+          <a href="{{ url_for('calendario') }}"> CALENDARIO</a>
+          <div class="dropdown">
+            <button class="dropbtn">
+              POSICIONES <i class="ri-arrow-down-s-line"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="{{ url_for('tabla_posiciones')}}">PRIMERA DIVISION</a>
+              <a href="{{ url_for('tabla_posiciones_segunda') }}"
+                >SEGUNDA DIVISION</a
+              >
+            </div>
+          </div>
+          <a href="{{ url_for('mostrar_jugadores')}}"> ASISTENCIA</a>
+          <a href="{{ url_for('estadisticas_jugadores') }}"> ESTADISTICAS</a>
+          <a href="{{ url_for('resultados_partidos')}}"> PARTIDOS</a>
+          <a href="{{ url_for('galeria') }}"> GALERIA</a>
+          <a href="#"> REGLAMENTO</a>
+        </div>
+        <div class="navbar-actions" id="navbar-actions">
+          <a href="{{ url_for('login') }}" class="highlight"
+            ><i class="ri-user-line"></i> LogIn</a
+          >
+          <div class="navbar-search" id="navbar-search">
+            <input type="text" placeholder="Buscar..." />
+            <i class="ri-search-line"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="content">
+      <section class="banner">
+        <div class="banner-main-content">
+          <h2>OBTÉN LAS ÚLTIMAS NOTICIAS DEPORTIVAS DEL MUNDO</h2>
+          <h3>El portal de noticias deportivas líder en el mundo</h3>
+
+          <button>
+            <a href="#">Saber más</a>
+          </button>
+
+          <div class="current-news-head">
+            <h3>
+              Apple Glasses: Lo que esperamos, lo que creemos que somos
+              <span>por Erick Lagos</span>
+            </h3>
+
+            <h3>
+              ¿Cómo es tener el antiguo número de teléfono de Elon Musk?
+              <span>por Hèctor Burgos</span>
+            </h3>
+
+            <h3>
+              Mira el momento exacto en el que Chris Pratt borró accidentalmente
+              51.000 correos electrónicos <span>por Pedrito Perez</span>
+            </h3>
+
+            <h3>
+              Virgin Orbit de Richard Branson lanzará un cohete desde el aire el
+              domingo <span>Por elver figueroa</span>
+            </h3>
+          </div>
+        </div>
+
+        <div class="banner-sub-content">
+          <div class="hot-topic">
+            <img src="/static/images/noticias/banner-news-1.jpg" alt="" />
+
+            <div class="hot-topic-content">
+              <h2>
+                ¡Emocionante Noticia!
+              </h2>
+
+              <h3>Nuevo tema 1</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Inventore consequatur nostrum minus iusto fugit unde.
+              </p>
+              <a href="#">Leer más</a>
+            </div>
+          </div>
+
+          <div class="hot-topic">
+            <img src="/static/images/noticias/banner-news-2.jpg" alt="" />
+
+            <div class="hot-topic-content">
+              <h2>
+                ¡Emocionante Noticia!
+              </h2>
+
+              <h3>Nuevo Tema 1</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Inventore consequatur nostrum minus iusto fugit unde.
+              </p>
+              <a href="#">Leer Mas</a>
+            </div>
+          </div>
+
+          <div class="hot-topic">
+            <img src="/static/images/noticias/banner-news-3.jpg" alt="" />
+
+            <div class="hot-topic-content">
+              <h2>
+                ¡Emocionante Noticia!
+              </h2>
+
+              <h3>Nuevo Tema 1</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Inventore consequatur nostrum minus iusto fugit unde.
+              </p>
+              <a href="#">Leer Mas</a>
+            </div>
+          </div>
+
+          <div class="hot-topic">
+            <img src="/static/images/noticias/banner-news-4.jpg" alt="" />
+
+            <div class="hot-topic-content">
+              <h2>
+                ¡Emocionante Noticia!
+              </h2>
+
+              <h3>Nuevo Tema 1</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Inventore consequatur nostrum minus iusto fugit unde.
+              </p>
+              <a href="#">Leer Mas</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr />
+
+      <main>
+        <section class="main-container-left">
+          <h2>Historias destacadas</h2>
+          <div class="container-top-left">
+            <article>
+              <img src="/static/images/noticias/bottom-left-1.jpg" />
+
+              <div>
+                <h3>Los Mejores "BMWs" para Familias, Otorgados por la FIFA</h3>
+
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Blanditiis ea sint, nisi rem earum fugit? Facere veritatis
+                  sapiente eveniet quibusdam.
+                </p>
+
+                <a href="#">Leer Mas <span>>></span></a>
+              </div>
+            </article>
+          </div>
+
+          <div class="container-bottom-left">
+            <article>
+              <img src="/static/images/noticias/bottom-left-1.jpg" />
+              <div>
+                <h3>
+                  ¡Anuncio Especial!
+                </h3>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Commodi iure modi animi cupiditate. Explicabo, nihil?
+                </p>
+
+                <a href="#">Leer Mas <span>>></span></a>
+              </div>
+            </article>
+
+            <article>
+              <img src="/static/images/noticias/bottom-left-2.jpg" />
+              <div>
+                <h3>
+                  iPad PRO!
+                </h3>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Commodi iure modi animi cupiditate. Explicabo, nihil?
+                </p>
+
+                <a href="#">Leer Mas <span>>></span></a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="main-container-right">
+          <h2>Últimas historias</h2>
+
+          <article>
+            <h4>justo en</h4>
+            <div>
+              <h2>
+                ¡Atención, Aficionados!
+              </h2>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id,
+                repellendus?
+              </p>
+
+              <a href="#">Leer Mas <span>>></span></a>
+            </div>
+            <img src="/static/images/noticias/right-1.jpg" />
+          </article>
+
+          <article>
+            <h4>justo en</h4>
+            <div>
+              <h2>
+                ¡Anuncio Especial! Los Mejores "Partidos" al Aire Libre
+              </h2>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id,
+                repellendus?
+              </p>
+
+              <a href="#">Leer Mas <span>>></span></a>
+            </div>
+            <img src="/static/images/noticias/right-2.jpg" />
+          </article>
+
+          <article>
+            <h4>justo en</h4>
+            <div>
+              <h2>
+                ¡Atención, Aficionados! Descubre los Mejores "Medios de Campo"
+              </h2>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id,
+                repellendus?
+              </p>
+
+              <a href="#">Leer Mas <span>>></span></a>
+            </div>
+            <img src="/static/images/noticias/right-3.jpg" />
+          </article>
+
+          <article>
+            <h4>justo en</h4>
+            <div>
+              <h2>
+                ¡Noticia Emocionante! Disneyland París Presentará la Emocionante
+                Obra Teatral
+              </h2>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id,
+                repellendus?
+              </p>
+
+              <a href="#">Leer Mas <span>>></span></a>
+            </div>
+            <img src="/static/images/noticias/right-4.jpg" />
+          </article>
+
+          <article>
+            <h4>justo en</h4>
+            <div>
+              <h2>
+                Mirar la pantalla de bloqueo de un teléfono también requiere una
+                orden judicial
+              </h2>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id,
+                repellendus?
+              </p>
+
+              <a href="#">Leer Mas<span>>></span></a>
+            </div>
+            <img src="/static/images/noticias/right-5.jpg" />
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="footer-logo">
+          <img src="/static/images/logo.png" alt="Logo" />
+        </div>
+        <div class="footer-lang">
+          <a href="#">ASOCIACION DEPORTIVA</a>
+        </div>
+        <div class="footer-top-link">
+          <a href="#">Back to the top <i class="ri-arrow-up-s-line"></i></a>
+        </div>
+      </div>
+      <div class="footer-contact">
+        <p>Dirección: Calle Falsa 123, Ciudad, País</p>
+        <p>Teléfono: +123 456 7890</p>
+      </div>
+      <div class="footer-subscribe">
+        <h3>Suscríbete a nuestro boletín</h3>
+        <form id="subscribe-form">
+          <input type="email" placeholder="Ingresa tu email" required />
+          <button type="submit">Suscribirse</button>
+        </form>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.youtube.com/"><i class="ri-youtube-line"></i></a>
+        <a href="https://www.instagram.com"><i class="ri-instagram-line"></i></a>
+        <a href="https://www.x.com"><i class="ri-twitter-line"></i></a>
+        <a href="https://www.facebook.com"><i class="ri-facebook-circle-line"></i></a>
+        <a href="https://www.linkedin.com"><i class="ri-linkedin-line"></i></a>
+        <a href="https://www.twitch.com"><i class="ri-twitch-line"></i></a>
+      </div>
+      <div class="footer-bottom">
+        <a href="#">REGLAMENTO</a>
+        <a href="#">PARTIDOS</a>
+        <a href="#">GALERIA</a>
+        <a href="#">CONTACTO</a>
+      </div>
+    </footer>
+
+    <script src="/static/js/noticias.js" async defer></script>
+  </body>
+</html>

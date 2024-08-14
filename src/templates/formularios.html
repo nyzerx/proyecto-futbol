@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Descargar Reglamento</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/formularios.css" />
+    <style>
+
+              /* Aquí va el CSS para ajustar las imágenes */
+        /* CSS para ajustar las imágenes */
+        img {
+            max-width: 16%;
+            height: auto;
+            display: block;
+            margin-inline: auto;
+        }
+
+    
+        .header img {
+            max-width: 100px; /* Ajusta este valor según necesites */
+            height: auto;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('/static/images/login/fondo11.jpg');
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            margin-top: 150px;
+        }
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .logo {
+            width: 250px;
+            height: auto;
+        }
+        h1 {
+            font-size: 4.5em;
+            margin: 0;
+            text-align: center;
+        }
+        h2 {
+            font-size: 2em;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .descargar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .descargar img {
+            width: 120px;
+            height: 120px;
+        }
+        .descargar a {
+            text-decoration: none;
+            color: white;
+            background-color: #4CAF50;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 3em;
+        }
+        .descargar a:hover {
+            background-color: #45a049;
+        }
+
+        .titulo {
+            font-size: 36px;
+            margin: 0;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                background-image: url('/static/images/login/fondo11.jpg');
+                background-size: cover;
+                background-position: center;
+            }
+            .logo {
+                width: 300px; /* Aumentar el tamaño del logo en móvil */
+                height: 300px;
+            }
+            .logo-container {
+                display: flex;
+                justify-content: center;
+                width: 80%;
+                margin-top: 0;
+            }
+            .descargar img {
+                width: 100px;
+                height: 80px;
+            }
+            .descargar a {
+                font-size: 2.5em;
+            }
+            h1 {
+                font-size: 4em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+        <!--=============== HEADER ===============-->
+        <header class="header">
+            <nav class="nav container">
+                <div class="nav__data">
+                    <a href="{{ url_for('home') }}" class="nav__logo">
+                      <img src="/static/images/logo.png" alt="Logo de la Asociación Deportiva" />
+                        <h1 class="titulo">Asociación Deportiva </h1>
+                    </a>
+    
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="ri-menu-line nav__toggle-menu"></i>
+                        <i class="ri-close-line nav__toggle-close"></i>
+                    </div>
+                </div>
+    
+                <!--=============== NAV MENU ===============-->
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li>
+                            <a href="{{ url_for('home') }}" class="nav__link">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('noticias') }}" class="nav__link">
+                                Noticias <i class="ri-newspaper-line"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('galeria') }}" class="nav__link">
+                                Galería <i class="ri-gallery-line"></i>
+                            </a>
+                        </li>
+                        <!--=============== DROPDOWN 1 ===============-->
+                        <li class="dropdown__item">
+                            <div class="nav__link dropdown__button">
+                                Equipos <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                            </div>
+    
+                            <div class="dropdown__container">
+                                <div class="dropdown__content">
+                                    <div class="dropdown__group">
+                                        <div class="dropdown__icon">
+                                            <i class="ri-flashlight-line"></i>
+                                        </div>
+    
+                                        <span class="dropdown__title">Datos De Competencia</span>
+    
+                                        <ul class="dropdown__list">
+                                            <li>
+                                                <a href="{{ url_for('resultados_partidos')}}" class="dropdown__link">Resultados Partidos</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url_for('estadisticas_jugadores') }}" class="dropdown__link">Estadísticas Jugadores</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url_for('mostrar_jugadores')}}" class="dropdown__link">Asistencias Jugadores</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+    
+                                    <div class="dropdown__group">
+                                        <div class="dropdown__icon">
+                                            <i class="ri-file-paper-2-line"></i>
+                                        </div>
+    
+                                        <span class="dropdown__title">Posiciones</span>
+    
+                                        <ul class="dropdown__list">
+                                            <li>
+                                                <a href="{{ url_for('tabla_posiciones')}}" class="dropdown__link">Primera División</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url_for('tabla_posiciones_segunda') }}" class="dropdown__link">Segunda División</a>
+                                            </li>
+                                        </ul>
+                                        <li>
+                                            <a href="{{ url_for('login') }}" class="nav__link">
+                                                Acceso <i class="ri-login-box-line"></i>
+                                            </a>
+                                        </li>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+    <div class="logo-container">
+        <img src="/static/images/logo2.png" alt="Logo" class="logo">
+    </div>
+    <div class="container">
+        <h1>ASOCIACIÓN DE FÚTBOL</h1>
+        <h1>VECINAL DE SAN IGNACIO</h1>
+        <h2>REGLAMENTO Y BASES DEL CAMPEONATO</h2>
+        <div class="descargar">
+            <img src="/static/images/docx.png" alt="Icono de Word">
+            <a href="/descargar-reglamento">Descargar Reglamento</a>
+        </div>
+    </div>
+
+    <!-- Script JavaScript -->
+    <script src="static/js/formularios.js"></script>
+</body>
+</html>

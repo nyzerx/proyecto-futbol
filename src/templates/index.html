@@ -1,0 +1,442 @@
+<!doctype html>
+<html class=no-js lang="">
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<head>
+    <meta charset=utf-8>
+    <meta name=description content="">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <title>soccer club</title>
+    <link rel="shortcut icon" href="/static/css/favicon.ico">
+    <link rel=stylesheet href="/static/css/style.css">
+    <link rel=stylesheet href="/static/css/vendor.css">
+    <link rel=stylesheet type=text/css href="/static/css/layerslider.css">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <script src=/static/js/vendor/modernizr.js></script>
+
+</head>
+<body>
+<!--[if lt IE 10]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+<div class=wrapper>
+    <header class=header-main>
+        <div class=header-upper>
+            <div class=container>
+                <div class=row>
+                    <ul>
+                        <li><a href="{{ url_for('login') }}">Registrar/logear</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="header-lower clearfix">
+            <div class=container>
+                <div class=row>
+                    <h1 class=logo><a href=index-2.html><img src=" /static/images/logo.png" alt="Logo"></a></h1>
+                    <div class=menubar>
+                        <nav class=navbar>
+                            <div class=nav-wrapper>
+                                <div class=navbar-header>
+                                    <button type=button class=navbar-toggle><span class=sr-only>Toggle navigation</span>
+                                        <span class=icon-bar></span></button>
+                                </div>
+                                <div class=nav-menu>
+                                    <ul class="nav navbar-nav menu-bar">
+                                        <li><a href=index-2.html class=active>Inicio <span></span> <span></span>
+                                            <span></span> <span></span></a></li>
+                                        <li><a href="{{ url_for('noticias')}}">Noticias<span></span> <span></span> <span></span>
+                                            <span></span></a></li>
+                                        <li><a href="{{ url_for('calendario')}}">Calendario<span></span> <span></span> <span></span> <span></span></a>
+                                        <li><a href="{{ url_for('galeria')}}">Galeria<span></span> <span></span> <span></span> <span></span></a>
+
+                                        </li>
+                                        <li><a href="{{ url_for('listar_equipos')}}">Equipos<span></span> <span></span> <span></span>
+                                            <span></span></a></li>
+                                        <li><a>Posiciones<span></span> <span></span> <span></span> <span></span></a>
+                                            <ul class=sub-menu>
+                                                <li><a href="{{ url_for('tabla_posiciones')}}">Primera División</a></li>
+                                                <li><a href="{{ url_for('tabla_posiciones_segunda') }}">Segunda División</a></li>
+
+                                            </ul>
+                                        </li>
+                                        <li><a href="{{ url_for('estadisticas_jugadores') }}">Estadisticas <span></span> <span></span> <span></span>
+                                            <span></span></a></li>
+                                        <li><a href="{{ url_for('resultados_partidos')}}">Partidos <span></span> <span></span> <span></span> <span></span></a>
+                                        </li>
+                                        <li><a href="{{ url_for('mostrar_jugadores')}}">Asistencia <span></span> <span></span> <span></span> <span></span></a>
+                                        </li>
+                                        <li><a href="{{ url_for('formulario')}}">Reglamento <span></span> <span></span> <span></span> <span></span></a>
+                                        </li>
+                                      </li>
+                                      <li><a href="{{ url_for('transferir_jugador')}}">Transferencia <span></span> <span></span> <span></span> <span></span></a>
+                                      </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class=social>
+                        <a href=https://www.facebook.com class=facebook><i
+                            class="fa fa-facebook"></i></a>
+                        <a href=https://twitter.com class=twitter><i
+                            class="fa fa-twitter"></i></a>
+                        <a href=https://www.instagram.com/ class=instagram><i
+                            class="fa fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class=banner id=layerSlider style="width: 100%;">
+        <div class=ls-slide data-ls="transition3d: 33,15; slidedelay: 8000 ; durationin:0;">
+            <img src="/static/images/banner/background01.jpg" class=ls-bg alt="Slide background">
+            <div class="ls-l layercontent01" style="top: 50%; left: 50%; z-index:4;"
+                 data-ls="offsetxin:left; offsetxout:right; durationin: 4000; parallaxlevel: 8;">
+                <img src="/static/images/banner/player.png" alt=innerimage class=img-responsive
+                    style="max-width: 100% !important ;">
+            </div>
+            <img src="/static/images/banner/ball.png" alt=innerimage class="ls-l layercontent02" style=z-index:5;
+                 data-ls="offsetxin: right; offsetxout:left; rotatein:-360; easingin: easeoutquart; durationin: 4000; delayin: 250; parallaxlevel: -5;">
+            <img src="{{ url_for('static', filename='images/banner/front_particles.png') }}"alt=particles class=ls-l style="z-index:3; left:0;"
+                 data-ls="offsetxin: left; offsetxout:left; scalexin:50; easingin: easeoutquart; durationin: 3000; delayin: 250;">
+            <img src="{{ url_for('static', filename='images/banner/back_particles.png') }}"alt=particles class=ls-l style="z-index:3; left:50%;"
+                 data-ls="offsetxin: left; offsetxout:left; scalein:90; easingin: easeoutquart; durationin: 3000; delayin: 250;">
+            <h2 class="ls-l bannertext layercontent03" data-ls="offsetxin:left; rotatexin:90 ; durationin: 3500;">
+                Club</h2>
+
+            <h2 class="ls-l bannertext01 italic01 layercontent04"
+                data-ls="offsetxin:left; scalexin:9; durationin: 4000;">Asociacion</h2><h4
+                    class="ls-l bannertext02 layercontent05" data-ls="offsetxin:left; rotatexin:90 ; durationin: 4500;">
+                De</h4>
+
+            <h2 class="ls-l bannertext01 layercontent06" style="left: 87%; top:760px;"
+                data-ls="offsetxin:left; flipxin:90 ; durationin: 5000;">Futbol<sup>#1</sup></h2><h6
+                    class="ls-l bannertext03 layercontent07" data-ls="offsetxin:left; flipxin:90 ; durationin: 6000;">
+                Feb , 2024</h6></div>
+    </div>
+    <div class=banner-text>
+        <div class=container>
+            <div class=row>Club Asociacion De<sup>Futbol</sup> Feb , 2024.</div>
+        </div>
+    </div>
+
+  
+ 
+
+
+<script>
+  document
+    .getElementById("reset-filters")
+    .addEventListener("click", function () {
+      document.getElementById("season-select").value = "2023-24";
+      document.getElementById("competition-select").value = "all";
+    });
+
+  document
+    .getElementById("competition-select")
+    .addEventListener("change", function () {
+      const competition = this.value;
+      const rows = document.querySelectorAll(".result-row");
+      rows.forEach((row) => {
+        if (
+          competition === "all" ||
+          row
+            .querySelector(".result-competition span")
+            .textContent.toLowerCase()
+            .includes(competition)
+        ) {
+          row.style.display = "flex";
+        } else {
+          row.style.display = "none";
+        }
+      });
+    });
+</script>
+
+
+<div class="selector">
+  <h1>Asociación Deportiva</h1>
+      <h2>Resultados Partidos</h2>
+      <div class="filters">
+        <label for="season-select" class="temporada">Seleccionar temporada:</label>
+        <select id="season-select">
+          <option value="2023-24">2023/24</option>
+          <option value="2022-23">2022/23</option>
+          <!-- Otras temporadas -->
+        </select>
+        <!--<label for="competition-select">Competición:</label>
+        <select id="competition-select">
+          <option value="all">Todas</option>
+          <option value="liga">Liga</option>
+          <option value="champions">Champions League</option>
+           Otras competiciones 
+        </select> 
+        <button id="reset-filters">Reiniciar Filtros</button>-->
+      </div>
+  <!-- Formulario para filtrar por jornada -->
+  <form action="{{ url_for('home') }}" method="post" class="form">
+      <div class="dropdown">
+          <select id="jornada" name="ID_jornada" class="select">
+              {% for i in range(1, 19) %}
+                  <option value="{{ i }}" class="option" {% if i == ID_jornada %}selected{% endif %}>Jornada {{ i }}</option>
+              {% endfor %}
+          </select>
+          <button type="submit" class="button">
+              <i class="ri-filter-3-line">Filtrar</i> 
+          </button>
+      </div>
+  </form>
+</div>
+
+<!-- Recuadros de categoría con sus respectivos partidos -->
+{% for nombre_categoria, partidos in categorias.items() %}
+<div class="categoria">
+  <h2>{{ nombre_categoria }}</h2>
+  <div class="table-responsive">
+      <table>
+          <thead>
+              <tr>
+                  <th>Equipo Local</th>
+                  <th>Resultado</th>
+                  <th>Equipo Visitante</th>
+              </tr>
+          </thead>
+          <tbody>
+              {% for partido in partidos %}
+              <tr class="partido" data-target="detalle-{{ nombre_categoria }}-{{ loop.index }}">
+                  <td>
+                      <img src="{{ url_for('static', filename='images/equipos/' + partido['Equipo_Local'] + '.png') }}"
+                          alt="Escudo del equipo local" class="equipo-logo" />
+                      {{ partido['Equipo_Local'] }}
+                  </td>
+                  <td class="result">{{ partido['Goles_Local'] }} - {{ partido['Goles_Visita'] }}</td>
+                  <td>
+                      <img src="{{ url_for('static', filename='images/equipos/' + partido['Equipo_Visitante'] + '.png') }}"
+                          alt="Escudo del equipo visitante" class="equipo-logo" />
+                      {{ partido['Equipo_Visitante'] }}
+                  </td>
+              </tr>
+              <!-- Contenedor para los detalles del partido -->
+              <tr class="detalle-container" id="detalle-{{ nombre_categoria }}-{{ loop.index }}-container" style="display: none;">
+                  <td colspan="3">
+                      <!-- Contenido de los detalles del partido -->
+                      <div id="detalle-{{ nombre_categoria }}-{{ loop.index }}" class="detalle-content">
+                          <h3>Jugadores que anotaron goles:</h3>
+                          <ul>
+                              {% if partido['Jugadores'] %}
+                                  {% for jugador in partido['Jugadores'] %}
+                                  <li>{{ jugador['Nombre'] }} ({{ jugador['Equipo'] }}) - Goles: {{ jugador['Goles'] }}</li>
+                                  {% endfor %}
+                              {% else %}
+                                  <li>No hay goles registrados en este partido.</li>
+                              {% endif %}
+                          </ul>
+                      </div>
+                  </td>
+              </tr>
+              {% endfor %}
+          </tbody>
+      </table>
+  </div>
+</div>
+{% endfor %}
+
+<script>
+  document.querySelectorAll('.partido').forEach(partido => {
+      partido.addEventListener('click', () => {
+          const targetId = partido.getAttribute('data-target');
+          const detailContainer = document.getElementById(targetId + '-container');
+          detailContainer.style.display = detailContainer.style.display === 'none' ? '' : 'none';
+      });
+  });
+  </script>
+    
+
+    <section>
+        <main>
+        <section class="main-container-left">
+          <h2>Historias destacadas</h2>
+          <div class="container-top-left">
+            <article>
+              <img src="/static/images/noticias/bottom-left-1.jpg" />
+
+              <div>
+                <h3>Los Mejores "BMWs" para Familias, Otorgados por la FIFA</h3>
+
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Blanditiis ea sint, nisi rem earum fugit? Facere veritatis
+                  sapiente eveniet quibusdam.
+                </p>
+
+                <a href="#">Leer Mas <span>>></span></a>
+              </div>
+            </article>
+          </div>
+
+          <div class="container-bottom-left">
+            <article>
+              <img src="/static/images/noticias/bottom-left-1.jpg" />
+              <div>
+                <h3>
+                  ¡Anuncio Especial! Los Mejores "Parlantes" Inteligentes del
+                  Año para la Asociación de Fútbol
+                </h3>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Commodi iure modi animi cupiditate. Explicabo, nihil?
+                </p>
+
+                <a href="#">Leer Mas <span>>></span></a>
+              </div>
+            </article>
+
+            <article>
+              <img src="/static/images/noticias/bottom-left-2.jpg" />
+              <div>
+                <h3>
+                  iPad Pro, ¡la Revelación del Año! ¿Se ha Convertido en el
+                  Compañero Estrella para los Entrenadores y Jugadores de la
+                  Asociación de Fútbol??
+                </h3>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Commodi iure modi animi cupiditate. Explicabo, nihil?
+                </p>
+
+                <a href="#">Leer Mas <span>>></span></a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="main-container-right">
+          <h2>Últimas historias</h2>
+
+          <article>
+            <h4>justo en</h4>
+            <div>
+              <h2>
+                ¡Atención, Aficionados! Descubre Cómo Seguir el Ritmo de Tu
+                "Golazo Financiero" con el Portal Get My Payment del IRSl
+              </h2>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id,
+                repellendus?
+              </p>
+
+              <a href="#">Leer Mas <span>>></span></a>
+            </div>
+            <img src="/static/images/noticias/right-1.jpg" />
+          </article>
+
+          <article>
+            <h4>justo en</h4>
+            <div>
+              <h2>
+                ¡Anuncio Especial! Los Mejores "Partidos" al Aire Libre para
+                Disfrutar en Familia, Seleccionados por la Asociación de Fútbol
+              </h2>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id,
+                repellendus?
+              </p>
+
+              <a href="#">Leer Mas <span>>></span></a>
+            </div>
+            <img src="/static/images/noticias/right-2.jpg" />
+          </article>
+
+          <article>
+            <h4>justo en</h4>
+            <div>
+              <h2>
+                ¡Atención, Aficionados! Descubre los Mejores "Medios de Campo"
+                Eléctricos para el 2020, Seleccionados por la Asociación de
+                Fútbol
+              </h2>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id,
+                repellendus?
+              </p>
+
+              <a href="#">Leer Mas <span>>></span></a>
+            </div>
+            <img src="/static/images/noticias/right-3.jpg" />
+          </article>
+
+          <article>
+            <h4>justo en</h4>
+            <div>
+              <h2>
+                ¡Noticia Emocionante! Disneyland París Presentará la Emocionante
+                Obra Teatral "El Rey León" el Viernes por la Noche, Seleccionada
+                por la Asociación de Fútbol
+              </h2>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id,
+                repellendus?
+              </p>
+
+              <a href="#">Leer Mas <span>>></span></a>
+            </div>
+            <img src="/static/images/noticias/right-4.jpg" />
+          </article>
+
+          <article>
+            <h4>justo en</h4>
+            <div>
+              <h2>
+                Mirar la pantalla de bloqueo de un teléfono también requiere una
+                orden judicial, dictamina un juez
+              </h2>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id,
+                repellendus?
+              </p>
+
+              <a href="#">Leer Mas<span>>></span></a>
+            </div>
+            <img src="/static/images/noticias/right-5.jpg" />
+          </article>
+        </section>
+      </main>
+    </section>
+
+    <footer class=footer-type01>
+        <div class=footer-type02>
+            <div class=container>
+                <div class=row><a href=index-2.html class=footer-logo><img src="/static/images/logo.png" alt=image></a>
+
+                    <div class=footer-container>
+                        <ul class=clearfix>
+                            <li><a href=https://www.facebook.com/templatespoint.net class=bigsocial-link><i
+                                    class="fa fa-facebook"></i></a></li>
+                            <li><a href=https://twitter.com/ class=bigsocial-link target=_blank><i
+                                    class="fa fa-twitter"></i></a></li>
+                            <li><a href=https://www.behance.net/ class=bigsocial-link target=_blank><i
+                                    class="fa fa-behance"></i></a></li>
+                        </ul>
+                        <p><a target="_blank" href="https://www.templatespoint.net/">Templates Point</a></p></div>
+                    <div class=footer-appstore>
+                        <figure><a href=#><img src="/static/images/appstore/apple.png" alt=image></a></figure>
+                        <figure><a href=#><img src="/static/images/appstore/google.png" alt=image></a></figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<script src="/static/js/vendor/vendor.js"></script>
+<script src="/static/js/main.js"></script>
+
+
+</body>
+
+</html>
